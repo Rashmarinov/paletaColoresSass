@@ -1,3 +1,18 @@
 /* ********* */
 /* @GRID*/
 /* ********* */
+
+.container{
+    display: grid;
+    /* Definimos cuantas columnas tendrá nuestra grid, en este caso 3 columnas */
+    grid-template-columns: repeat(3, 1fr);
+    /* Definimos cuantas filas tendrá nuestra grid, en este caso 2 filas */
+    grid-template-rows: minmax(3, auto);
+    /* Utilizamos grid-gap para establecer un espaciado entre los elementos de nuestra grid */
+    grid-gap: 50px;
+}
+
+.uno{
+    grid-column: 1 / 4;
+    grid-row: 1;
+}

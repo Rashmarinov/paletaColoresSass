@@ -1,3 +1,44 @@
 /* ********* */
 /* @FORMS */
 /* ********* */
+
+.container{
+    height: 100vh;
+    width: 80wh;
+    background-color: $colorFondo;
+    text-align: center;
+}
+
+// Creación de los polaroid en diferentes colores
+// Utilizar el "each"
+
+@each $color, $fondoPolaroid in $colores{
+    .polaroid {
+        height: 270px;
+        width: 220px;
+        //ajustamos el texto dentro de la polaroid
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        border-top: 10px solid #fff;
+        border-right: 10px solid #fff;
+        border-left: 10px solid #fff;
+
+        //fondo
+        &--#{$color}{
+            background-color: $fondoPolaroid;
+
+            //texto de las polaroid
+            .texto{
+                background-color: #fff;
+                padding: 5px 0;
+                text-align: center;
+                &::before{
+                    content:"#{$fondoPolaroid}";
+                }
+            }
+        }       
+    }
+}
+
